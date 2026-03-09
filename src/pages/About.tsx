@@ -44,9 +44,9 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               The Bureau
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            {/* <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Advancing justice through scientific excellence since 1985.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>

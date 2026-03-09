@@ -66,9 +66,9 @@ const Gallery = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Photo Gallery
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            {/* <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Explore our facilities, operations, and team in action.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -94,7 +94,7 @@ const Gallery = () => {
       </section>
 
       {/* Filters */}
-      <section className="py-8 bg-background border-b border-border">
+      {/* <section className="py-8 bg-background border-b border-border">
         <div className="container-wide">
           <div className="flex flex-wrap gap-2">
             {categories.map((category) => (
@@ -112,10 +112,10 @@ const Gallery = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Gallery Grid */}
-      <section className="section-padding bg-background">
+      <section className="mb-40 mt-20 bg-background">
         <div className="container-wide">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredPhotos.map((photo) => (

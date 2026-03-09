@@ -135,10 +135,10 @@ const Services = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Forensic Services
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            {/* <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Comprehensive forensic analysis and expert services delivered with
               precision, integrity, and scientific excellence.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>

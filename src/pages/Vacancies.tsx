@@ -16,13 +16,6 @@ const positions = [
     description:
       "We are seeking an experienced forensic document examiner to join our team. The ideal candidate will have expertise in handwriting analysis, document authentication, and ink analysis.",
   },
-  {
-    title: "Construction Expert",
-    location: "Main Office",
-    type: "Full-time",
-    description:
-      "Looking for a qualified construction expert with experience in structural assessment, building code compliance, and damage evaluation.",
-  },
 ];
 
 const Vacancies = () => {
@@ -62,10 +55,6 @@ const Vacancies = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Vacancies
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              Join our team of dedicated forensic professionals and contribute
-              to the pursuit of justice.
-            </p>
           </div>
         </div>
       </section>
@@ -78,39 +67,41 @@ const Vacancies = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-2xl font-bold text-foreground mb-8">
-            Open Positions
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-foreground mb-8">
+              Open Positions
+            </h2>
             {positions.map((position, index) => (
               <motion.div
                 key={position.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="bg-card rounded-xl p-6 shadow-corporate"
+                className="bg-card rounded-xl p-6 shadow-corporate mb-8"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Briefcase className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-foreground mb-2">
-                      {position.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-4 mb-3">
-                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                        <MapPin className="w-4 h-4" />
-                        {position.location}
-                      </span>
-                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                        <Clock className="w-4 h-4" />
-                        {position.type}
-                      </span>
+                <div className={`mb-4 `}>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Briefcase className="w-6 h-6 text-gold" />
                     </div>
-                    <p className="text-sm text-muted-foreground">
-                      {position.description}
-                    </p>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold text-foreground mb-2">
+                        {position.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-4 mb-3">
+                        <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <MapPin className="w-4 h-4" />
+                          {position.location}
+                        </span>
+                        <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                          <Clock className="w-4 h-4" />
+                          {position.type}
+                        </span>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        {position.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -243,7 +234,8 @@ const Vacancies = () => {
                     "Submitting..."
                   ) : (
                     <>
-                      Submit Application <Send className="ml-2 w-4 h-4" />
+                      Submit Application{" "}
+                      <Send className="ml-2 w-4 h-4 text-gold" />
                     </>
                   )}
                 </Button>

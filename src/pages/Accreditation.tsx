@@ -85,10 +85,10 @@ const Accreditation = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-16"
+          className="mb-40"
         >
           <h2 className="text-2xl font-bold text-foreground mb-8 flex items-center gap-3">
-            <Award className="w-6 h-6 text-primary" />
+            <Award className="w-6 h-6 text-gold" />
             Accreditations
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -98,7 +98,7 @@ const Accreditation = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                className="bg-card rounded-xl p-6 shadow-corporate border-l-4 border-primary"
+                className="bg-card rounded-xl p-6 shadow-corporate border-l-4 border-gold"
               >
                 <h3 className="font-semibold text-foreground mb-2 text-xl">
                   {accreditation.title}

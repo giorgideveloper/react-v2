@@ -80,14 +80,6 @@ export default function BlogPost() {
               <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                 {post.category}
               </span>
-              <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                <Calendar className="w-4 h-4" />
-                {post.date}
-              </span>
-              <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                <User className="w-4 h-4" />
-                {post.author}
-              </span>
             </div>
           </motion.header>
 

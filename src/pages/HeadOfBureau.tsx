@@ -23,7 +23,7 @@ const HeadOfBureau = () => {
       </section>
 
       {/* Profile */}
-      <section className="mt-10 mb-20 bg-background">
+      <section className="mt-10 mb-40 bg-background">
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Profile Image */}
@@ -46,19 +46,19 @@ const HeadOfBureau = () => {
 
                 <div className="mt-6 pt-6 border-t border-border space-y-3 text-left">
                   <div className="flex items-center gap-3">
-                    <Award className="w-5 h-5 text-primary" />
+                    <Award className="w-5 h-5 text-gold" />
                     <span className="text-sm text-muted-foreground">
                       Ph.D. Forensic Science
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Briefcase className="w-5 h-5 text-primary" />
+                    <Briefcase className="w-5 h-5 text-gold" />
                     <span className="text-sm text-muted-foreground">
                       30+ Years Experience
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <BookOpen className="w-5 h-5 text-gold" />
                     <span className="text-sm text-muted-foreground">
                       50+ Publications
                     </span>
@@ -114,9 +114,18 @@ const HeadOfBureau = () => {
                     Education
                   </h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Ph.D. Forensic Science, State University</li>
-                    <li>• M.Sc. Chemistry, National University</li>
-                    <li>• B.Sc. Chemistry, City College</li>
+                    <li>
+                      <span className="text-gold">•</span> Ph.D. Forensic
+                      Science, State University
+                    </li>
+                    <li>
+                      <span className="text-gold">•</span> M.Sc. Chemistry,
+                      National University
+                    </li>
+                    <li>
+                      <span className="text-gold">•</span> B.Sc. Chemistry, City
+                      College
+                    </li>
                   </ul>
                 </div>
                 <div className="bg-card rounded-xl p-6 shadow-corporate">
@@ -124,9 +133,18 @@ const HeadOfBureau = () => {
                     Certifications
                   </h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>• Certified Forensic Examiner (CFE)</li>
-                    <li>• Certified Document Examiner (CDE)</li>
-                    <li>• ISO 17025 Lead Assessor</li>
+                    <li>
+                      <span className="text-gold">•</span> Certified Forensic
+                      Examiner (CFE)
+                    </li>
+                    <li>
+                      <span className="text-gold">•</span> Certified Document
+                      Examiner (CDE)
+                    </li>
+                    <li>
+                      <span className="text-gold">•</span> ISO 17025 Lead
+                      Assessor
+                    </li>
                   </ul>
                 </div>
               </div>

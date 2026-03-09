@@ -105,10 +105,10 @@ const Blog = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Blog
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
+            {/* <p className="text-xl text-primary-foreground/80 leading-relaxed">
               Stay updated with the latest news, research, and developments in
               forensic science.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -123,16 +123,21 @@ const Blog = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-xl overflow-hidden shadow-corporate card-hover"
+              className="bg-card rounded-xl overflow-hidden shadow-corporate card-hover group"
             >
               {/* Post Thumbnail */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <span className="text-2xl font-bold text-primary">
-                    {post.id}
-                  </span>
+              <Link
+                to={`/blog/${post.slug}`}
+                className="hover:text-gold transition-colors"
+              >
+                <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary">
+                      {post.id}
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Post Content */}
               <div className="p-6">
@@ -140,30 +145,17 @@ const Blog = () => {
                   <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {post.category}
                   </span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <Calendar className="w-3 h-3" />
-                    {post.date}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <User className="w-3 h-3" />
-                    {post.author}
-                  </span>
                 </div>
 
-                <h2 className="text-xl font-semibold text-foreground mb-3">
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="hover:text-gold transition-colors"
-                  >
-                    {post.title}
-                  </Link>
+                <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors">
+                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                 </h2>
 
                 <p className="text-muted-foreground mb-4">{post.excerpt}</p>
 
                 <Link
                   to={`/blog/${post.slug}`}
-                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all hover:text-gold"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:gap-2 transition-all hover:text-gold "
                 >
                   Read More <ArrowRight className="w-4 h-4" />
                 </Link>

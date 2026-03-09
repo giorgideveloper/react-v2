@@ -17,9 +17,10 @@ const Contact = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Contact Us
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              We're here to assist with your forensic science needs. Reach out to our team.
-            </p>
+            {/* <p className="text-xl text-primary-foreground/80 leading-relaxed">
+              We're here to assist with your forensic science needs. Reach out
+              to our team.
+            </p> */}
           </div>
         </div>
       </section>
@@ -28,12 +29,14 @@ const Contact = () => {
 
       {/* Map Placeholder */}
       <section className="h-96 bg-muted">
-        <div className="h-full flex items-center justify-center">
-          <div className="text-center">
-            <p className="text-muted-foreground">Interactive Map</p>
-            <p className="text-sm text-muted-foreground/60">123 Justice Avenue, Capital City</p>
-          </div>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10203.785628287083!2d41.626806994368394!3d41.645177501106915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406786304ea2d221%3A0x7a3053a9e12ea967!2sBatumi!5e0!3m2!1sen!2sge!4v1773061755528!5m2!1sen!2sge"
+          className="w-full h-full"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </section>
     </Layout>
   );

@@ -67,9 +67,6 @@ const VideoGallery = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary-foreground mb-6">
               Video Gallery
             </h1>
-            <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              Watch videos about our work, services, and facilities.
-            </p>
           </div>
         </div>
       </section>
@@ -95,7 +92,7 @@ const VideoGallery = () => {
       </section>
 
       {/* Video Grid */}
-      <section className="section-padding bg-background">
+      <section className="mb-40 mt-20 mb-md-10 mt-md-10 bg-background">
         <div className="container-wide">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video, index) => (
@@ -120,7 +117,7 @@ const VideoGallery = () => {
 
                 {/* Video Info */}
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-gold transition-colors">
                     {video.title}
                   </h3>
                   <p className="text-sm text-muted-foreground line-clamp-2">
