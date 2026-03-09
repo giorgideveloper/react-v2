@@ -5,22 +5,26 @@ const values = [
   {
     icon: Shield,
     title: "Integrity",
-    description: "Maintaining the highest ethical standards in every analysis and report.",
+    description:
+      "Maintaining the highest ethical standards in every analysis and report.",
   },
   {
     icon: Target,
     title: "Precision",
-    description: "Delivering accurate, scientifically sound results that withstand scrutiny.",
+    description:
+      "Delivering accurate, scientifically sound results that withstand scrutiny.",
   },
   {
     icon: Eye,
     title: "Objectivity",
-    description: "Providing impartial analysis free from bias or external influence.",
+    description:
+      "Providing impartial analysis free from bias or external influence.",
   },
   {
     icon: Users,
     title: "Service",
-    description: "Dedicated to supporting justice and serving the public interest.",
+    description:
+      "Dedicated to supporting justice and serving the public interest.",
   },
 ];
 
@@ -55,19 +59,34 @@ const About = () => {
               <h2 className="section-title mb-6">Our History</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  The National Forensics Bureau was established in 1985 in response to the growing need for a centralized, independent forensic science authority. Our founding mission was to provide objective, scientifically rigorous analysis to support the justice system.
+                  The National Forensics Bureau was established in 1985 in
+                  response to the growing need for a centralized, independent
+                  forensic science authority. Our founding mission was to
+                  provide objective, scientifically rigorous analysis to support
+                  the justice system.
                 </p>
                 <p>
-                  Over four decades, we have grown from a small laboratory with twelve scientists to a comprehensive forensic institution employing over 200 experts across multiple specialized disciplines. Our facilities now span three regional centers, serving law enforcement agencies and courts nationwide.
+                  Over four decades, we have grown from a small laboratory with
+                  twelve scientists to a comprehensive forensic institution
+                  employing over 200 experts across multiple specialized
+                  disciplines. Our facilities now span three regional centers,
+                  serving law enforcement agencies and courts nationwide.
                 </p>
                 <p>
-                  Today, the Bureau is recognized internationally for our contributions to forensic science, our commitment to quality, and our unwavering dedication to the pursuit of truth and justice.
+                  Today, the Bureau is recognized internationally for our
+                  contributions to forensic science, our commitment to quality,
+                  and our unwavering dedication to the pursuit of truth and
+                  justice.
                 </p>
               </div>
             </div>
             <div className="bg-muted p-12 text-center">
-              <p className="text-8xl font-display font-bold text-primary/10">1985</p>
-              <p className="text-lg font-semibold text-primary mt-4">Year Established</p>
+              <p className="text-8xl font-display font-bold text-primary/10">
+                1985
+              </p>
+              <p className="text-lg font-semibold text-primary mt-4">
+                Year Established
+              </p>
             </div>
           </div>
         </div>
@@ -79,7 +98,10 @@ const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="section-title mb-8">Our Mission</h2>
             <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-              To provide the highest quality forensic science services with integrity, objectivity, and scientific excellence, supporting the fair administration of justice and protecting the rights of all citizens.
+              To provide the highest quality forensic science services with
+              integrity, objectivity, and scientific excellence, supporting the
+              fair administration of justice and protecting the rights of all
+              citizens.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
@@ -99,7 +121,7 @@ const About = () => {
       </section>
 
       {/* Facilities */}
-      <section className="section-padding bg-background">
+      {/* <section className="section-padding bg-background">
         <div className="container-wide">
           <div className="text-center mb-12">
             <h2 className="section-title mb-4">Our Facilities</h2>
@@ -122,7 +144,7 @@ const About = () => {
             )}
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };

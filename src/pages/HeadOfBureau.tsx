@@ -23,7 +23,7 @@ const HeadOfBureau = () => {
       </section>
 
       {/* Profile */}
-      <section className="mt-10 mb-10 bg-background">
+      <section className="mt-10 mb-20 bg-background">
         <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Profile Image */}

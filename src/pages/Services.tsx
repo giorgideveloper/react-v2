@@ -16,7 +16,8 @@ const services = [
   {
     icon: Dna,
     title: "DNA Analysis",
-    description: "Advanced genetic profiling and analysis using state-of-the-art sequencing technology for precise identification.",
+    description:
+      "Advanced genetic profiling and analysis using state-of-the-art sequencing technology for precise identification.",
     features: [
       "STR and Y-STR profiling",
       "Mitochondrial DNA analysis",
@@ -28,7 +29,8 @@ const services = [
   {
     icon: FileText,
     title: "Document Examination",
-    description: "Expert analysis of questioned documents, handwriting verification, and forgery detection.",
+    description:
+      "Expert analysis of questioned documents, handwriting verification, and forgery detection.",
     features: [
       "Handwriting comparison",
       "Signature verification",
@@ -40,7 +42,8 @@ const services = [
   {
     icon: Monitor,
     title: "Digital Forensics",
-    description: "Comprehensive recovery and analysis of digital evidence from computers, mobile devices, and networks.",
+    description:
+      "Comprehensive recovery and analysis of digital evidence from computers, mobile devices, and networks.",
     features: [
       "Computer forensics",
       "Mobile device analysis",
@@ -52,7 +55,8 @@ const services = [
   {
     icon: Target,
     title: "Ballistics Analysis",
-    description: "Scientific examination of firearms, ammunition, and projectile evidence for criminal investigations.",
+    description:
+      "Scientific examination of firearms, ammunition, and projectile evidence for criminal investigations.",
     features: [
       "Firearm identification",
       "Bullet comparison",
@@ -64,7 +68,8 @@ const services = [
   {
     icon: FlaskConical,
     title: "Toxicology",
-    description: "Detection and quantification of drugs, poisons, and other substances in biological specimens.",
+    description:
+      "Detection and quantification of drugs, poisons, and other substances in biological specimens.",
     features: [
       "Drug screening",
       "Blood alcohol analysis",
@@ -76,7 +81,8 @@ const services = [
   {
     icon: Fingerprint,
     title: "Fingerprint Analysis",
-    description: "Latent print development, comparison, and identification using AFIS and expert examination.",
+    description:
+      "Latent print development, comparison, and identification using AFIS and expert examination.",
     features: [
       "Latent print development",
       "AFIS searches",
@@ -88,7 +94,8 @@ const services = [
   {
     icon: Microscope,
     title: "Trace Evidence",
-    description: "Microscopic analysis of fibers, hair, glass, paint, and other trace materials.",
+    description:
+      "Microscopic analysis of fibers, hair, glass, paint, and other trace materials.",
     features: [
       "Fiber analysis",
       "Hair examination",
@@ -100,7 +107,8 @@ const services = [
   {
     icon: Scale,
     title: "Expert Testimony",
-    description: "Professional court testimony and expert witness services to support legal proceedings.",
+    description:
+      "Professional court testimony and expert witness services to support legal proceedings.",
     features: [
       "Court testimony",
       "Deposition support",
@@ -128,7 +136,8 @@ const Services = () => {
               Forensic Services
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              Comprehensive forensic analysis and expert services delivered with precision, integrity, and scientific excellence.
+              Comprehensive forensic analysis and expert services delivered with
+              precision, integrity, and scientific excellence.
             </p>
           </div>
         </div>
@@ -164,7 +173,9 @@ const Services = () => {
                     ))}
                   </ul>
                 </div>
-                <div className={`bg-muted p-12 ${index % 2 === 1 ? "lg:order-1" : ""}`}>
+                <div
+                  className={`bg-muted p-12 ${index % 2 === 1 ? "lg:order-1" : ""}`}
+                >
                   <service.icon className="w-32 h-32 text-primary/10 mx-auto" />
                 </div>
               </div>
@@ -174,7 +185,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary">
+      {/* <section className="py-20 bg-primary">
         <div className="container-wide text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-6">
             Ready to Submit a Case?
@@ -189,7 +200,7 @@ const Services = () => {
             Contact Us Today
           </Link>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };
