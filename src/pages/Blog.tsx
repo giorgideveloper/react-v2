@@ -142,9 +142,9 @@ const Blog = () => {
               {/* Post Content */}
               <div className="p-6">
                 <div className="flex flex-wrap items-center gap-4 mb-4">
-                  <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                  {/* <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                     {post.category}
-                  </span>
+                  </span> */}
                 </div>
 
                 <h2 className="text-xl font-semibold text-foreground mb-3 group-hover:text-gold transition-colors">

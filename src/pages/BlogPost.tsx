@@ -75,13 +75,7 @@ export default function BlogPost() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="mb-8"
-          >
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-                {post.category}
-              </span>
-            </div>
-          </motion.header>
+          ></motion.header>
 
           {/* Featured Image */}
           <motion.div
