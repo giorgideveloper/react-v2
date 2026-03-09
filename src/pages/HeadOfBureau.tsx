@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
-import { User, Award, BookOpen } from "lucide-react";
+import { Award, BookOpen, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
 
 const HeadOfBureau = () => {
   return (
@@ -22,63 +23,114 @@ const HeadOfBureau = () => {
       </section>
 
       {/* Profile */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
+      <section className="mt-10 mb-10 bg-background">
+        <div className="section-container">
           <div className="grid lg:grid-cols-3 gap-12">
-            {/* Photo */}
-            <div className="lg:col-span-1">
-              <div className="bg-muted aspect-[3/4] flex items-center justify-center">
-                <User className="w-32 h-32 text-primary/20" />
-              </div>
-            </div>
-
-            {/* Bio */}
-            <div className="lg:col-span-2">
-              <h2 className="text-3xl font-display font-bold text-primary mb-2">
-                Dr. Alexandra Sterling, PhD
-              </h2>
-              <p className="text-gold font-semibold uppercase tracking-wider text-sm mb-8">
-                Director General
-              </p>
-
-              <div className="space-y-4 text-muted-foreground leading-relaxed mb-10">
-                <p>
-                  Dr. Alexandra Sterling has served as Director General of the National Forensics Bureau since 2018, bringing over 25 years of experience in forensic science and laboratory management.
-                </p>
-                <p>
-                  Prior to her appointment, Dr. Sterling served as Deputy Director of Forensic Services and Director of the DNA Analysis Division. She has been instrumental in modernizing the Bureau's capabilities and expanding its international partnerships.
-                </p>
-                <p>
-                  Dr. Sterling holds a PhD in Molecular Biology from Cambridge University and completed her forensic science training at the FBI Laboratory. She is a Fellow of the American Academy of Forensic Sciences and has published extensively on DNA analysis methodologies.
-                </p>
-              </div>
-
-              {/* Credentials */}
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="flex items-start gap-4">
-                  <Award className="w-8 h-8 text-gold flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">Qualifications</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>PhD Molecular Biology, Cambridge</li>
-                      <li>MSc Forensic Science, UCL</li>
-                      <li>FBI Laboratory Fellow</li>
-                    </ul>
-                  </div>
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="lg:col-span-1"
+            >
+              <div className="bg-secondary rounded-2xl p-8 text-center">
+                <div className="w-48 h-48 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                  <span className="text-6xl font-bold text-primary">JD</span>
                 </div>
-                <div className="flex items-start gap-4">
-                  <BookOpen className="w-8 h-8 text-gold flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-primary mb-1">Memberships</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>American Academy of Forensic Sciences</li>
-                      <li>International Association for Identification</li>
-                      <li>Society of Forensic Toxicologists</li>
-                    </ul>
+                <h2 className="text-2xl font-bold text-foreground">
+                  Dr. John Doe
+                </h2>
+                <p className="text-muted-foreground mt-1">
+                  Director & Chief Expert
+                </p>
+
+                <div className="mt-6 pt-6 border-t border-border space-y-3 text-left">
+                  <div className="flex items-center gap-3">
+                    <Award className="w-5 h-5 text-primary" />
+                    <span className="text-sm text-muted-foreground">
+                      Ph.D. Forensic Science
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Briefcase className="w-5 h-5 text-primary" />
+                    <span className="text-sm text-muted-foreground">
+                      30+ Years Experience
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <BookOpen className="w-5 h-5 text-primary" />
+                    <span className="text-sm text-muted-foreground">
+                      50+ Publications
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
+
+            {/* Biography */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="lg:col-span-2"
+            >
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                Biography
+              </h3>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Dr. John Doe has served as the Director and Chief Expert of
+                  the Expertise Bureau since 2005. With over three decades of
+                  experience in forensic science and technical expertise, he has
+                  established himself as one of the leading authorities in the
+                  field.
+                </p>
+                <p>
+                  After completing his Ph.D. in Forensic Science from the State
+                  University, Dr. Doe began his career at the National Forensic
+                  Laboratory, where he developed innovative methodologies for
+                  document examination and material analysis. His work has been
+                  instrumental in resolving numerous high-profile cases.
+                </p>
+                <p>
+                  Dr. Doe is a certified forensic examiner, a member of several
+                  professional associations, and has published extensively in
+                  peer-reviewed journals. He regularly serves as an expert
+                  witness in court proceedings and provides consultation to
+                  legal professionals on complex technical matters.
+                </p>
+                <p>
+                  Under his leadership, the Expertise Bureau has achieved
+                  international accreditation and expanded its services to meet
+                  the evolving needs of clients. Dr. Doe remains committed to
+                  maintaining the highest standards of professional excellence
+                  and ethical conduct.
+                </p>
+              </div>
+
+              <div className="mt-8 grid md:grid-cols-2 gap-6">
+                <div className="bg-card rounded-xl p-6 shadow-corporate">
+                  <h4 className="font-semibold text-foreground mb-3">
+                    Education
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Ph.D. Forensic Science, State University</li>
+                    <li>• M.Sc. Chemistry, National University</li>
+                    <li>• B.Sc. Chemistry, City College</li>
+                  </ul>
+                </div>
+                <div className="bg-card rounded-xl p-6 shadow-corporate">
+                  <h4 className="font-semibold text-foreground mb-3">
+                    Certifications
+                  </h4>
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    <li>• Certified Forensic Examiner (CFE)</li>
+                    <li>• Certified Document Examiner (CDE)</li>
+                    <li>• ISO 17025 Lead Assessor</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,55 +1,56 @@
+import { useState } from "react";
 import Layout from "@/components/layout/Layout";
-import { Briefcase, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Briefcase, MapPin, Clock, Send, Paperclip } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
 
-const vacancies = [
+const positions = [
   {
-    id: 1,
-    title: "Senior Forensic DNA Analyst",
-    department: "DNA Analysis Division",
-    location: "Central Laboratory",
-    type: "Full-time",
-    posted: "January 25, 2026",
-  },
-  {
-    id: 2,
-    title: "Digital Forensics Specialist",
-    department: "Digital Forensics Unit",
-    location: "Central Laboratory",
-    type: "Full-time",
-    posted: "January 20, 2026",
-  },
-  {
-    id: 3,
     title: "Forensic Document Examiner",
-    department: "Questioned Documents Unit",
-    location: "Regional Center North",
+    location: "Main Office",
     type: "Full-time",
-    posted: "January 18, 2026",
+    description:
+      "We are seeking an experienced forensic document examiner to join our team. The ideal candidate will have expertise in handwriting analysis, document authentication, and ink analysis.",
   },
   {
-    id: 4,
-    title: "Laboratory Technician",
-    department: "Chemistry Division",
-    location: "Regional Center South",
+    title: "Construction Expert",
+    location: "Main Office",
     type: "Full-time",
-    posted: "January 15, 2026",
-  },
-  {
-    id: 5,
-    title: "Quality Assurance Manager",
-    department: "Quality Management",
-    location: "Central Laboratory",
-    type: "Full-time",
-    posted: "January 10, 2026",
+    description:
+      "Looking for a qualified construction expert with experience in structural assessment, building code compliance, and damage evaluation.",
   },
 ];
 
 const Vacancies = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    toast.success(
+      "Application submitted successfully! We will review your application and contact you.",
+    );
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(false);
+  };
   return (
     <Layout>
       {/* Hero */}
-      <section className="pt-32 pb-20 bg-primary">
+      <section className="pt-32 pb-20 bg-primary mb-10">
         <div className="container-wide">
           <div className="max-w-3xl">
             <div className="flex items-center gap-4 mb-6">
@@ -62,84 +63,195 @@ const Vacancies = () => {
               Vacancies
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed">
-              Join our team of dedicated forensic professionals and contribute to the pursuit of justice.
+              Join our team of dedicated forensic professionals and contribute
+              to the pursuit of justice.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Why Work Here */}
-      <section className="py-16 bg-muted">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <h3 className="font-display font-semibold text-primary mb-2">Meaningful Work</h3>
-              <p className="text-sm text-muted-foreground">
-                Make a real difference in the justice system
-              </p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-display font-semibold text-primary mb-2">Professional Growth</h3>
-              <p className="text-sm text-muted-foreground">
-                Continuous training and development opportunities
-              </p>
-            </div>
-            <div className="text-center">
-              <h3 className="font-display font-semibold text-primary mb-2">Competitive Benefits</h3>
-              <p className="text-sm text-muted-foreground">
-                Excellent compensation and government benefits
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Job Listings */}
-      <section className="section-padding bg-background">
-        <div className="container-wide">
-          <h2 className="section-title mb-8">Current Openings</h2>
-          <div className="space-y-4">
-            {vacancies.map((job) => (
-              <div
-                key={job.id}
-                className="card-elevated p-6 hover:border-primary/20 transition-all group"
+      <div className="section-container mb-10">
+        {/* Open Positions */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className="text-2xl font-bold text-foreground mb-8">
+            Open Positions
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {positions.map((position, index) => (
+              <motion.div
+                key={position.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="bg-card rounded-xl p-6 shadow-corporate"
               >
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-display font-semibold text-primary mb-2 group-hover:text-gold transition-colors">
-                      {job.title}
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                      {position.title}
                     </h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Briefcase className="w-4 h-4" />
-                        {job.department}
-                      </span>
-                      <span className="flex items-center gap-1">
+                    <div className="flex flex-wrap gap-4 mb-3">
+                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4" />
-                        {job.location}
+                        {position.location}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1 text-sm text-muted-foreground">
                         <Clock className="w-4 h-4" />
-                        {job.type}
+                        {position.type}
                       </span>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="text-sm text-muted-foreground">Posted: {job.posted}</span>
-                    <Link
-                      to={`/vacancies/${job.id}`}
-                      className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground text-sm font-semibold uppercase tracking-wider hover:bg-navy-light transition-colors"
-                    >
-                      Apply
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    <p className="text-sm text-muted-foreground">
+                      {position.description}
+                    </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.section>
+
+        {/* Application Form */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-card rounded-2xl p-8 shadow-corporate-lg">
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                Apply Now
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Submit your application and we will get back to you within 5
+                business days.
+              </p>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Full Name *
+                    </label>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="John Smith"
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      required
+                      className="h-12"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-foreground mb-2"
+                    >
+                      Email Address *
+                    </label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      required
+                      className="h-12"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Phone Number *
+                  </label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+1 (234) 567-890"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    required
+                    className="h-12"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="cv"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Attach CV/Resume
+                  </label>
+                  <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors cursor-pointer">
+                    <Paperclip className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground">
+                      Click to upload or drag and drop
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      PDF, DOC, DOCX (Max 5MB)
+                    </p>
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-foreground mb-2"
+                  >
+                    Cover Letter / Additional Information
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us about yourself and why you'd be a great fit..."
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    rows={5}
+                    className="resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    "Submitting..."
+                  ) : (
+                    <>
+                      Submit Application <Send className="ml-2 w-4 h-4" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            </div>
+          </div>
+        </motion.section>
+      </div>
     </Layout>
   );
 };
